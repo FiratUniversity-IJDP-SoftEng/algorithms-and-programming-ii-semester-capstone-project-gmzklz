@@ -1,4 +1,4 @@
-# [Your Algorithm Name] - Interactive Visualization
+# Huffman Coding - Interactive Visualization
 
 ## Project Overview
 
