@@ -6,46 +6,108 @@ This project is an interactive web application that implements and visualizes Hu
 
 ## Algorithm Description
 
-[Provide a comprehensive explanation of your algorithm here. Include the following elements:]
-
 ### Problem Definition
 
-[Clearly define the problem that the algorithm solves]
+The goal of this algorithm is to compress data without losing any information. Huffman Coding solves the problem of minimizing the total number of bits used to represent characters in a message, especially when some characters appear more frequently than others.
+
+Given:
+
+A string or data input with repeated characters
+
+Find:
+
+A binary representation for each character that results in the shortest possible encoded message, using prefix-free binary codes.
+
 
 ### Mathematical Background
 
-[Explain any mathematical concepts, formulas, or notation relevant to understanding the algorithm]
+----
 
 ### Algorithm Steps
 
-1. [Step 1 with explanation]
-2. [Step 2 with explanation]
-3. [Step 3 with explanation]
+1. Count Frequencies:
+Count how often each character appears in the input.
+
+2. Build a Priority Queue:
+Each character and its frequency become a node. All nodes are inserted into a min-heap based on frequency.
+
+3. Construct the Huffman Tree:
+
+-While there is more than one node in the queue:
+
+-Remove the two nodes with the lowest frequencies.
+
+-Create a new internal node with their combined frequency.
+
+-Insert the new node back into the queue.
+
+-The final node becomes the root of the Huffman Tree.
+
+4.Generate Codes:
+Traverse the tree:
+
+Add '0' for left edges
+
+Add '1' for right edges
+This gives unique prefix codes for each character.
+
+5.Encode the Input:
+Replace each character with its binary code.
+
+6.Decode (optional):
+Use the Huffman Tree to decode the binary message back to the original.
+
+
 ...
 
 ### Pseudocode
 
 ```
-[Include pseudocode representation of your algorithm]
+function HuffmanCoding(text):
+    freq_map = countFrequencies(text)
+    priority_queue = createMinHeap(freq_map)
+
+    while priority_queue.size > 1:
+        left = priority_queue.pop()
+        right = priority_queue.pop()
+        merged = Node(left.freq + right.freq, left, right)
+        priority_queue.push(merged)
+
+    root = priority_queue.pop()
+    code_map = generateCodes(root)
+    encoded = encode(text, code_map)
+    return encoded, root
+
 ```
 
 ## Complexity Analysis
 
 ### Time Complexity
 
-- **Best Case:** O(...) - [Explanation]
-- **Average Case:** O(...) - [Explanation]
-- **Worst Case:** O(...) - [Explanation]
+- **Best Case:** O(nlogn) - When all characters have similar frequencies.
+- **Average Case:** O(nlogn) - Building the heap and tree both involve log operations.
+- **Worst Case:** O(nlogn) - Even if all characters are unique, we still process each node through a priority queue.
 
 ### Space Complexity
 
-- O(...) - [Explanation]
+- O(n) - For storing frequency table, tree nodes, and the code map.
 
 ## Features
 
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
+- Real-Time Visualization:
+Watch how the Huffman Tree is built step by step.
+- Frequency Analysis Display:
+See character frequencies in a bar chart or table.
+- Live Compression Ratio:
+Compare original and compressed message sizes.
+- Interactive Tree:
+Hover or click to reveal character codes and paths.
+- Encode/Decode Functionality:
+Test your own text input and observe the encoding/decoding process.
+
+
+  
+  
 ...
 
 ## Screenshots
