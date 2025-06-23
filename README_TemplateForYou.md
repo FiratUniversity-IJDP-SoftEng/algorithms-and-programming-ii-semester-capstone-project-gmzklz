@@ -43,7 +43,7 @@ Each character and its frequency become a node. All nodes are inserted into a mi
 
 -The final node becomes the root of the Huffman Tree.
 
-4.Generate Codes:
+  4.Generate Codes:
 Traverse the tree:
 
 Add '0' for left edges
