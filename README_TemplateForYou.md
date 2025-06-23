@@ -175,9 +175,9 @@ A live demo of this application is available at: [Insert Streamlit Cloud URL her
 
 ## Author
 
-- **Name:** [Your Name]
-- **Student ID:** [Your Student ID]
-- **GitHub:** [Your GitHub Username]
+- **Name:** Gamzenur KILAZ
+- **Student ID:** 210543019
+- **GitHub:** gmzklz
 
 ## Acknowledgements
 
